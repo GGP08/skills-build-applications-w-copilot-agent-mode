@@ -76,12 +76,11 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# Ensure the DATABASES configuration is correctly set for Djongo
+# Update DATABASES configuration for Djongo and Django 4.1 compatibility
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'octofit_db',
-        'ENFORCE_SCHEMA': False,  # Optional: Disable schema validation for Djongo
         'CLIENT': {
             'host': 'localhost',
             'port': 27017,
