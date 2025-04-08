@@ -76,14 +76,20 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# Update DATABASES configuration for Djongo and Django 4.1 compatibility
+# Clarify the use of the Djongo engine
+DJONGO_ENGINE = 'djongo'
+
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
+        'ENGINE': DJONGO_ENGINE,  # Use the Djongo engine explicitly
         'NAME': 'octofit_db',
         'CLIENT': {
             'host': 'localhost',
             'port': 27017,
+            'username': '',  # Add MongoDB username if authentication is required
+            'password': '',  # Add MongoDB password if authentication is required
+            'authSource': 'admin',  # Default authentication database
+            'authMechanism': 'SCRAM-SHA-1',  # Default authentication mechanism
         },
     }
 }
