@@ -76,12 +76,10 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# Clarify the use of the Djongo engine
-DJONGO_ENGINE = 'djongo'
-
+# Ensure the DATABASES configuration is correctly set for Djongo
 DATABASES = {
     'default': {
-        'ENGINE': DJONGO_ENGINE,  # Use the Djongo engine explicitly
+        'ENGINE': 'djongo',
         'NAME': 'octofit_db',
         'CLIENT': {
             'host': 'localhost',
